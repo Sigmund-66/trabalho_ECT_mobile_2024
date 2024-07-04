@@ -4,7 +4,7 @@ import { CommonActions } from '@react-navigation/native';
 import Constants from 'expo-constants';
 
 export default function Tela1({ navigation }) {
-
+// dsjofnsodjvibsdsvs
     function goDrawer() {
         navigation.dispatch(
             CommonActions.reset({
