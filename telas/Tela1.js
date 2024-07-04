@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { StyleSheet, Text, View, Button, TextInput} from 'react-native';
 import { CommonActions } from '@react-navigation/native';
+import Constants from 'expo-constants';
 
 export default function Tela1({ navigation }) {
 
@@ -18,11 +19,23 @@ export default function Tela1({ navigation }) {
     return (
         <View style={styles.container}>
             <StatusBar style="auto" />
-            <Text>TELA 1</Text>
+            <Text>Sistema de empréstimos</Text>
+            <TextInput
+                style={styles.input}
+                placeholder="Email"
+                keyboardType="email-address"
+                autoCapitalize="none"
+            />
+
+            <TextInput
+                style={styles.input}
+                placeholder="Senha"
+                secureTextEntry
+            />
             <Button
                 onPress={goDrawer}
-                title="Botão"
-                color="#841584"
+                title="Entrar"
+                color="red"
             />
         </View>
     );
@@ -31,8 +44,18 @@ export default function Tela1({ navigation }) {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
         justifyContent: 'center',
-    },
+        alignItems: 'center',
+        paddingTop: Constants.statusBarHeight,
+        backgroundColor: '#fff',
+        padding: 20,
+      },
+      input: {
+        width: '25%',
+        marginBottom: 10,
+        padding: 10,
+        borderWidth: 1,
+        borderColor: '#ccc',
+        borderRadius: 4,
+      },
 });
