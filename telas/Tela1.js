@@ -1,19 +1,26 @@
+import React, { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Button, TextInput} from 'react-native';
 import { CommonActions } from '@react-navigation/native';
 import Constants from 'expo-constants';
 
 export default function Tela1({ navigation }) {
-// dsjofnsodjvibsdsvs
     function goDrawer() {
-        navigation.dispatch(
-            CommonActions.reset({
-              index: 0,
-              routes: [
-                { name: 'Drawer' }
-              ]
-            })
-          );
+        const [email, setEmail] = useState('');
+        const [password, setPassword] = useState('');
+
+        if (email === '' && password === '') {
+            Alert.alert('Por favor digite o seu email e senha');
+          } else {
+            navigation.dispatch(
+                CommonActions.reset({
+                  index: 0,
+                  routes: [
+                    { name: 'Drawer' }
+                  ]
+                })
+              );
+          }        
     }
 
     return (
@@ -24,12 +31,16 @@ export default function Tela1({ navigation }) {
                 style={styles.input}
                 placeholder="Email"
                 keyboardType="email-address"
+                onChangeText={setEmail}
+                value={email}
                 autoCapitalize="none"
             />
 
             <TextInput
                 style={styles.input}
                 placeholder="Senha"
+                onChangeText={setPassword}
+                value={password}
                 secureTextEntry
             />
             <Button
