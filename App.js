@@ -6,7 +6,7 @@ const Stack = createStackNavigator();
 import Tela1 from './telas/Tela1';
 import Tela4 from './telas/Tela4';
 import Drawer from './telas/Drawer';
-
+// TODO: Making a test
 export default function App() {
   return (
     <NavigationContainer>
