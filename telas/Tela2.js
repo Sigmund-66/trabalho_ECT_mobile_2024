@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Button } from 'react-native';
 
 export default function Tela2() {
 
@@ -11,14 +11,14 @@ export default function Tela2() {
 
             {/* Três botões centralizados */}
             <View style={styles.buttonContainer}>
-            <Button mode="contained" style={styles.button}>
-                Recursos disponíveis
+            <Button mode="contained" style={styles.button} title='Recursos disponíveis'>
             </Button>
-            <Button mode="contained" style={styles.button}>
-                Meu dados
+
+            <Button mode="contained" style={styles.button} title='Meu dados'>
             </Button>
-            <Button mode="contained" style={styles.button}>
-               Sair
+
+            <Button mode="contained" style={styles.button} title='Sair'>
+              
             </Button>
             </View>
 
@@ -43,13 +43,14 @@ const styles = StyleSheet.create({
         marginBottom: 20,
       },
       buttonContainer: {
-        flexDirection: 'row',
-        justifyContent: 'space-around',
+        flexDirection: 'column',
+        justifyContent: 'space-evenly',
         marginBottom: 20,
         width: '100%',
       },
       button: {
         width: '30%',
+        marginBottom: 40,
       },
       versionText: {
         fontSize: 12,

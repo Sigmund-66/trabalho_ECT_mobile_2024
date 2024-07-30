@@ -4,13 +4,15 @@ import { StyleSheet, Text, View, Button, TextInput} from 'react-native';
 import { CommonActions } from '@react-navigation/native';
 import Constants from 'expo-constants';
 
-export default function Tela1({ navigation }) {
-    function goDrawer() {
-        const [email, setEmail] = useState('');
-        const [password, setPassword] = useState('');
 
+
+export default function Tela1({ navigation }) {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    function goDrawer() {       
         if (email === '' && password === '') {
-            Alert.alert('Por favor digite o seu email e senha');
+            alert('Por favor digite o seu email e senha');
           } else {
             navigation.dispatch(
                 CommonActions.reset({
@@ -26,7 +28,7 @@ export default function Tela1({ navigation }) {
     return (
         <View style={styles.container}>
             <StatusBar style="auto" />
-            <Text>Sistema de empréstimos</Text>
+            <Text style={styles.titulo}>Sistema de Empréstimos</Text>
             <TextInput
                 style={styles.input}
                 placeholder="Email"
@@ -62,11 +64,17 @@ const styles = StyleSheet.create({
         padding: 20,
       },
       input: {
-        width: '25%',
+        width: '100%',
         marginBottom: 10,
         padding: 10,
         borderWidth: 1,
         borderColor: '#ccc',
         borderRadius: 4,
+      },
+
+      titulo: {
+        fontSize: 20,
+        fontWeight: 'bold',
+        marginBottom: 20,
       },
 });
